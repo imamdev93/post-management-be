@@ -9,12 +9,13 @@ use Carbon\Carbon;
 
 class ApiSyncService
 {
-    private $apiUrl = 'https://jsonplaceholder.typicode.com/posts';
 
     public function syncData()
     {
         try {
-            $response = Http::get($this->apiUrl);
+            $apiUrl = config('app.external_api_url');
+
+            $response = Http::get($apiUrl);
 
             if ($response === null) {
                 throw new \Exception('HTTP client returned null response');

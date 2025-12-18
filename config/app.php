@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'external_api_url' => env('EXTERNAL_API_URL', 'https://jsonplaceholder.typicode.com/posts'),
+
 ];

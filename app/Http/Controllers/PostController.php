@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Services\ApiSyncService;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -49,7 +47,7 @@ class PostController extends Controller
         $query->orderBy($sortBy, $sortOrder);
 
         // Pagination
-        $perPage = $request->get('per_page', 15);
+        $perPage = $request->get('per_page', 10);
         return $query->paginate($perPage);
     }
 
